@@ -52,8 +52,9 @@ BOOL CALLBACK Monitorenumproc(HMONITOR hmon, HDC hdc, LPRECT rect,
 int main(int argc, TCHAR *argv[]) {
   if (argc != 2) {
     puts("Usage:\n"
-         "\teverythingBlackExcept <MONITOR>\n\n"
-         "Displays blackscreen on all monitors except MONITOR.\n");
+         "\teverythingblackexcept <MONITOR>\n\n"
+         "Displays blackscreen on all monitors except MONITOR.\n"
+         "Use Alt+F4 to escape the blackness.");
     return 0;
   }
   g_monitor_to_keep_on = atoi(argv[1]);
