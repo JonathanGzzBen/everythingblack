@@ -9,6 +9,6 @@ LRESULT OnEraseBkgnd(HWND hwnd, HDC hdc);
 LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 BOOL CALLBACK Monitorenumproc(HMONITOR hmon, HDC hdc, LPRECT rect,
                               LPARAM param);
-int windows_main(int argc, char *argv[]);
+int display_black_on_all_screens_except(int screen_to_skip);
 
 #endif // IMPLEMENTATION_WINDOWS_H

@@ -49,22 +49,8 @@ BOOL CALLBACK Monitorenumproc(HMONITOR hmon, HDC hdc, LPRECT rect,
   return true;
 }
 
-int windows_main(int argc, char *argv[]) {
-
-  if (argc != 2) {
-    puts("Usage:\n"
-         "\teverythingblackexcept <MONITOR>\n\n"
-         "Displays blackscreen on all monitors except MONITOR.\n"
-         "Use Alt+F4 to escape the blackness.");
-    return 0;
-  }
-  g_monitor_to_keep_on = atoi(argv[1]);
-
-  if (g_monitor_to_keep_on == 0) {
-    puts("MONITOR is 1-based indexed");
-    return 1;
-  }
-
+int display_black_on_all_screens_except(int screen_to_skip) {
+  g_monitor_to_keep_on = screen_to_skip;
   g_instance = GetModuleHandle(NULL);
   WNDCLASSEX wc = {0};
   wc.cbSize = sizeof(WNDCLASSEX);

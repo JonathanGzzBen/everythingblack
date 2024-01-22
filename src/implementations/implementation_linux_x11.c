@@ -68,7 +68,7 @@ bool set_window_hints(Display *display, Window window) {
   return true;
 }
 
-int linux_x11_display_black_on_all_screens_except(int screen_to_skip) {
+int display_black_on_all_screens_except(int screen_to_skip) {
 
   Display *display = XOpenDisplay(NULL);
   if (display == NULL) {
